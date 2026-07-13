@@ -401,7 +401,7 @@ module falconsign_top #(
         .start(shake_start), .ready(shake_ready),
         .absorb(shake_absorb),
         .din(shake_din), .din_last(shake_din_last), .din_last_bytes(3'd0),
-        .dout_ready(shake_fifo_wr_ready),
+        .dout_ready(shake_fifo_wr_ready), 
         .dout_valid(shake_dout_valid), .dout(shake_dout));
 
     falconsign_word_fifo #(.WIDTH(64), .DEPTH(8), .ADDR_W(3)) u_shake_fifo (
@@ -447,10 +447,18 @@ module falconsign_top #(
     reg  [5:0]         hp_cint_flush_idx;
     // ─── SH phase: test message absorption ───
     // A short hardcoded test message (32 bytes = 4 x 64-bit words)
-    localparam [63:0] TEST_MSG_W0 = 64'h535F4E4F434C4146; // "FALCON_S", Keccak little-endian lane
+    /*localparam [63:0] TEST_MSG_W0 = 64'h535F4E4F434C4146; // "FALCON_S", Keccak little-endian lane
     localparam [63:0] TEST_MSG_W1 = 64'h545345545F4E4749; // "IGN_TEST"
     localparam [63:0] TEST_MSG_W2 = 64'h2E31565F47534D5F; // "_MSG_V1."
-    localparam [63:0] TEST_MSG_W3 = 64'h5F5F5F5F5F5F5F30; // "0_______"
+    localparam [63:0] TEST_MSG_W3 = 64'h5F5F5F5F5F5F5F30; // "0_______"*/
+
+    //Our Test Data
+    localparam [63:0] TEST_MSG_W0 = 64'h6162636465666768; // "FALCON_S", Keccak little-endian lane
+    localparam [63:0] TEST_MSG_W1 = 64'h696a6b6c6d6e6f70; // "IGN_TEST"
+    localparam [63:0] TEST_MSG_W2 = 64'h7172737475767778; // "_MSG_V1."
+    localparam [63:0] TEST_MSG_W3 = 64'h797a616263646566; // "0_______"
+
+    
     reg [3:0] sh_word_idx;
     localparam [1:0] SHF_IDLE      = 2'd0;
     localparam [1:0] SHF_DRIVE     = 2'd1;
