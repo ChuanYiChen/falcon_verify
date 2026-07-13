@@ -257,6 +257,10 @@ module tb_falconsign_samplerz_top;
         $finish;
     end
 
-    // ─── VCD dump disabled for bulk collection ───
+    // ─── VCD dump ───
+    initial begin
+        $dumpfile("samplerz_dump.vcd");
+        $dumpvars(0, tb_falconsign_samplerz_top);
+    end
 
 endmodule

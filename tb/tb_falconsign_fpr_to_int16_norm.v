@@ -84,6 +84,10 @@ module tb_falconsign_fpr_to_int16_norm;
         start_conv = 1'b0;
         start_norm = 1'b0;
 
+        // dump VCD for waveform viewing
+        $dumpfile("tb_falconsign_fpr_to_int16_norm.vcd");
+        $dumpvars(0, tb_falconsign_fpr_to_int16_norm);
+
         src_mem[0] = {128'd0, 64'd0, 64'h3ff0000000000000}; // 1.0
         src_mem[1] = {128'd0, 64'd0, 64'h4000000000000000}; // 2.0
         src_mem[2] = {128'd0, 64'd0, 64'hc008000000000000}; // -3.0

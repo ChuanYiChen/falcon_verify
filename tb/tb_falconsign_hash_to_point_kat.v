@@ -71,6 +71,12 @@ module tb_falconsign_hash_to_point_kat;
 
     always #5 clk = ~clk;
 
+    // VCD dump
+    initial begin
+        $dumpfile("tb_falconsign_hash_to_point_kat.vcd");
+        $dumpvars(0, tb_falconsign_hash_to_point_kat);
+    end
+
     initial begin
         expected[0]  = 16'd6493;
         expected[1]  = 16'd5608;

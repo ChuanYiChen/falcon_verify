@@ -59,6 +59,10 @@ module tb_falconsign_shake256_fifo_official_kat;
     always #5 clk = ~clk;
 
     initial begin
+        
+        $dumpfile("tb_falconsign_shake256_fifo_official_kat.vcd");
+        $dumpvars(0, tb_falconsign_shake256_fifo_official_kat);
+
         $readmemh("SRC/tb/falcon512_kat0_htp_words.hex", kat_words);
         $readmemh("SRC/tb/falcon512_kat0_htp_shake_words.hex", expected);
 

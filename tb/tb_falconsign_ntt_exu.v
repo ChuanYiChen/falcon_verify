@@ -175,10 +175,12 @@ module tb_falconsign_ntt_exu;
     end
 
     initial begin
-        if ($test$plusargs("DUMP_VCD")) begin
+        /*if ($test$plusargs("DUMP_VCD")) begin
             $dumpfile("tb_falconsign_ntt_exu.vcd");
             $dumpvars(0, tb_falconsign_ntt_exu);
-        end
+        end*/
+        $dumpfile("tb_falconsign_ntt_exu.vcd");
+        $dumpvars(0, tb_falconsign_ntt_exu);
     end
 
 endmodule

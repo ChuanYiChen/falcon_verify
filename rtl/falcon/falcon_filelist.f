@@ -75,3 +75,4 @@ rtl/falcon/falconsign_verify_top.v
 
 // ─── Top Level ───
 rtl/falcon/falconsign_top.v
+rtl/falcon/falconsign_norm_i16_check.v

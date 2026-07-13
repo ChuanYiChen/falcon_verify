@@ -164,6 +164,10 @@ module tb_falcon_f64_bhat_mul_exu;
         mem_rd_data = 256'd0;
         errors = 0;
 
+        // VCD dump
+        $dumpfile("tb_falcon_f64_bhat_mul_exu.vcd");
+        $dumpvars(0, tb_falcon_f64_bhat_mul_exu);
+
         for (i = 0; i < 64; i = i + 1)
             mem[i] = 256'd0;
 

@@ -78,6 +78,10 @@ module tb_falconsign_hash_to_point_official_kat;
         $readmemh("SRC/tb/falcon512_kat0_htp_words.hex", kat_words);
         $readmemh("SRC/tb/falcon512_kat0_htp_expected.hex", expected);
 
+        // Dump VCD for waveform viewing
+        $dumpfile("tb_falconsign_hash_to_point_official_kat.vcd");
+        $dumpvars(0, tb_falconsign_hash_to_point_official_kat);
+
         clk = 1'b0;
         rst_n = 1'b0;
         shake_start = 1'b0;

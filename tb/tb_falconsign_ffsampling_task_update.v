@@ -94,6 +94,9 @@ module tb_falconsign_ffsampling_task_update;
     endtask
 
     initial begin
+        $dumpfile("tb_falconsign_ffsampling_task_update.vcd");
+        $dumpvars(0, tb_falconsign_ffsampling_task_update);
+
         clk              = 1'b0;
         rst_n            = 1'b0;
         start            = 1'b0;
