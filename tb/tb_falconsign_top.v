@@ -238,11 +238,15 @@ module tb_falconsign_top;
     end
 
     // ─── Dump ───
-    initial begin
+    /*initial begin
         if ($test$plusargs("DUMP_VCD")) begin
             $dumpfile("tb_falconsign_top.vcd");
             $dumpvars(0, tb_falconsign_top);
         end
+    end*/
+    initial begin
+        $dumpfile("tb_falconsign_top.vcd");
+        $dumpvars(0, tb_falconsign_top);
     end
 
 endmodule
