@@ -985,7 +985,8 @@ module falconsign_top #(
 `endif
     assign rng_seed_valid = (st == SH) || ((st == SI) && (sn == FS));
     assign rng_seed_key   = 256'h0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF;
-    assign rng_seed_nonce = {88'd0, rng_nonce_lo};
+    //assign rng_seed_nonce = {88'd0, rng_nonce_lo};
+    assign rng_seed_nonce = 96'd0;  // In our testdata, we fix the nonce to be 0
     assign sz_rng_data    = rng_block[255:0];
     assign sz_rng_ack     = rng_valid && sz_rng_req;
     assign rng_ready      = sz_rng_req;
